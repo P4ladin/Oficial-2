@@ -9,8 +9,7 @@ cursor = banco.cursor()
 
 #cursor.execute("CREATE TABLE livros(nome text, autor text, editora text, lido text)")
 
-#cursor.execute("INSERT INTO livros VALUES('dom casmurro','machado de assis', 'moderna', true)") 
-
+#cursor.execute("INSERT INTO livros VALUES('dom casmurro','machado de assis', 'moderna', 'Sim')") 
 
 
 banco.commit()

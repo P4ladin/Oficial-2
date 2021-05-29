@@ -11,7 +11,6 @@ cursor = banco.cursor()
 
 #cursor.execute("INSERT INTO livros VALUES('dom casmurro','machado de assis', 'moderna', true)") 
 
-def verLista()
-    cursor.execute("")
+
 
 banco.commit()

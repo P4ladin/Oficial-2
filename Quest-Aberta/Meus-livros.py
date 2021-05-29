@@ -1,56 +1,32 @@
+import sqlite3
+from file import Function
 
+banco = sqlite3.connect('livros.db')
 
-
-
-
-class livro :
-    def __init__(self, codigo, nome, autor, editora):
-        self.codigo = codigo
-        self.nome = nome
-        self.autor = autor
-        self.editora = editora
-    
-    def setNumero(self, numero):
-           self.numero = numero
-    
-    def setNome(self, nome):
-           self.nome = nome
-    
-    def setAutor(self, autor):
-           self.autor = autor
-    
-    def setEditora(self, editora):
-           self.editora = editora
-    
-    def getCodigo(self):
-           return self.codigo
-    
-    def getNome(self):
-           return self.nome
-    
-    def getAutor(self):
-           return self.autor
-    
-    def getEditora(self):
-           return self.editora 
-       
+cursor = banco.cursor()
 
 
 class Interface:
     
-    alunos = []
+    livros = []
 
     def registra_Livro(self):
+        cursor.execute("SELECT TABLE livros.db")
         nome = input('Quais é o nome do livro?\n')
         autor = input('Quem foi o autor da Obra?\n')
+        editora = input('qual editora foi responsável pela publicação?\n')
+        lido = input('voce terminou a leitura dele? s/n\n')
+        
         
 
-        self.livros.append(livro(nome, autor,))
+        cursor.execute("INSERT INTO livros(nome, autor, editora, lido) VALUES("+nome+", "+autor+", "+editora+" "+lido+")")
+        banco.commit()
         print('livro adicionado!')
 
     def procurar_Livros(self):
-        for i, livro in enumerate(self.livros):
-            print(i, livro.nome)
+        print('Qual sera o metodo de pesquisa?\n')
+        input('Digite 1 para nome do livro\nDigite 2 para autor\nDigite 3 para cancelar')
+        
 
     def mostrar_Lista(self): #n sei como fazer esse
         
